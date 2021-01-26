@@ -8,7 +8,7 @@ class AuthScreen extends StatelessWidget {
         title: Text('Smart Church'),
       ),
       body: Center(
-        child: Text('Smart church Auth Pages coming...')
+        child: Text('Smart church Auth Pages coming...', style: Theme.of(context).textTheme.headline1,)
       ),
     );
   }
