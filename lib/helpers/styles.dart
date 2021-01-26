@@ -7,10 +7,10 @@ class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
       primarySwatch: Colors.blue,
-      primaryColor: isDarkTheme ? Colors.black : Colors.blue,
-      accentColor: isDarkTheme ? Colors.black : Colors.blue,
+      primaryColor: isDarkTheme ? Colors.black : Color(0xff1775d1),
+      accentColor: isDarkTheme ? Colors.black : Color(0xff1775d1),
       splashColor: Colors.grey.withOpacity(0.1),
-      canvasColor: isDarkTheme ? Colors.grey[900] : Colors.blue[50],
+      canvasColor: isDarkTheme ? Colors.grey[900] : Colors.indigo[50],
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
       fontFamily: 'Ubuntu',
       accentColorBrightness: isDarkTheme ? Brightness.light : Brightness.dark,
@@ -44,6 +44,12 @@ class Styles {
                   fontWeight: FontWeight.normal,
                   color: Colors.white,
                 ),
+                headline2: TextStyle(
+                  fontSize: 29,
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
                 headline6: TextStyle(
                   color: Colors.white,
                   fontSize: 22,
@@ -71,6 +77,12 @@ class Styles {
                   fontFamily: 'Ubuntu',
                   fontWeight: FontWeight.normal,
                   color: Colors.black,
+                ),
+                 headline2: TextStyle(
+                  fontSize: 30,
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
                 headline6: TextStyle(
                   fontSize: 22,
