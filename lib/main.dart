@@ -14,6 +14,7 @@ class SmartChurchApp extends StatelessWidget {
       title: 'Smart Church',
       theme:  Styles.themeData(false, context),
       home: AuthScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
