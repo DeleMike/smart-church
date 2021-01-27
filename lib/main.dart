@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import './screens/auth_screen.dart';
+import './screens/home_screen.dart';
+import './screens/tab_screen.dart';
 import './helpers/styles.dart';
 
 void main() {
@@ -14,6 +16,10 @@ class SmartChurchApp extends StatelessWidget {
       title: 'Smart Church',
       theme:  Styles.themeData(false, context),
       home: AuthScreen(),
+      routes: {
+        TabScreen.routeName: (ctx) => TabScreen(),
+        HomeScreen.routeName : (ctx) => HomeScreen(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
