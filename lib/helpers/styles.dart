@@ -16,14 +16,14 @@ class Styles {
       accentColorBrightness: isDarkTheme ? Brightness.light : Brightness.dark,
       buttonTheme: isDarkTheme
           ? ButtonTheme.of(context).copyWith(
-              buttonColor: Colors.black,
+              buttonColor: Theme.of(context).primaryColor,
               textTheme: ButtonTextTheme.primary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
             )
           : ButtonTheme.of(context).copyWith(
-              buttonColor: Colors.orange,
+              buttonColor: Theme.of(context).primaryColor,
               textTheme: ButtonTextTheme.primary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
