@@ -12,7 +12,7 @@ enum AuthMode {
 
 class _AuthFormState extends State<AuthForm>
     with SingleTickerProviderStateMixin {
-  AuthMode _authMode = AuthMode.Register;
+  AuthMode _authMode = AuthMode.Login;
   AnimationController _controller;
   Animation<Offset> _slideAnimation;
   Animation<double> _opacityAnimation;
@@ -43,6 +43,8 @@ class _AuthFormState extends State<AuthForm>
     );
   }
 
+  void _trySubmit() {}
+
   @override
   void dispose() {
     super.dispose();
@@ -66,6 +68,7 @@ class _AuthFormState extends State<AuthForm>
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
+    final orientation = MediaQuery.of(context).orientation;
     return AnimatedContainer(
       duration: Duration(milliseconds: 300),
       curve: Curves.easeIn,
@@ -75,7 +78,12 @@ class _AuthFormState extends State<AuthForm>
             : deviceSize.height * 0.45,
         width: deviceSize.width,
         padding: const EdgeInsets.all(10.0),
-        margin: const EdgeInsets.only(top: 80, left: 16, bottom: 16, right: 16),
+        margin: EdgeInsets.only(
+          top: orientation == Orientation.landscape ? 16 : 80,
+          left: 16,
+          bottom: 1,
+          right: 16,
+        ),
         child: Card(
           child: SingleChildScrollView(
             child: Column(
@@ -211,7 +219,7 @@ class _AuthFormState extends State<AuthForm>
                           color: Colors.white,
                         ),
                   ),
-                  onPressed: () {},
+                  onPressed: _trySubmit,
                 ),
                 //used to switch between login and sign up
                 FlatButton(
