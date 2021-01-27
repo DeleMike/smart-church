@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/auth_form.dart';
+import '../widgets/landscape_auth.dart';
 
 class AuthScreen extends StatelessWidget {
   @override
@@ -42,23 +43,18 @@ class AuthScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Center(
-                  child: AuthForm(),
+                SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 150),
+                      AuthForm(),
+                    ],
+                  ),
                 ),
               ],
             )
           : LandscapeAuthScreen(),
-    );
-  }
-}
-
-class LandscapeAuthScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Landscape view'),
-      ),
     );
   }
 }
