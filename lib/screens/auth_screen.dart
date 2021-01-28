@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/auth_form.dart';
-import '../widgets/landscape_auth.dart';
+import '../widgets/auth/auth_form.dart';
+import '../widgets/auth/landscape_auth.dart';
 
 class AuthScreen extends StatelessWidget {
   @override
