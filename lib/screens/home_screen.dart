@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/graphs/offering_graph.dart';
+
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
   @override
@@ -7,34 +9,36 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Flexible(
-              child: Card(
-                elevation: 4,
-                child: Container(
-                  height: 100,
+        child: SingleChildScrollView(
+                  child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: Card(
+                  elevation: 2,
+                  child: OfferingGraph(),
                 ),
               ),
-            ),
-            Flexible(
-               child: Card(
-                elevation: 4,
-                child: Container(
-                  height: 100,
+              Flexible(
+                child: Card(
+                  elevation: 2,
+                  child: OfferingGraph(),
                 ),
               ),
-            ),
-            Flexible(
-               child: Card(
-                elevation: 4,
-                child: Container(
-                  height: 100,
+              Flexible(
+                child: Card(
+                  elevation: 2,
+                  child: OfferingGraph(),
                 ),
               ),
-            ),
-          ],
+              Flexible(
+                child: Card(
+                  elevation: 2,
+                  child: OfferingGraph(),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
