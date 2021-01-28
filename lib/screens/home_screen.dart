@@ -5,11 +5,37 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Smart Church'),
-      ),
-      body: Center(
-        child: Text('Church activity displayed here, Real time?'),
+      body: Container(
+        margin: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Card(
+                elevation: 4,
+                child: Container(
+                  height: 100,
+                ),
+              ),
+            ),
+            Flexible(
+               child: Card(
+                elevation: 4,
+                child: Container(
+                  height: 100,
+                ),
+              ),
+            ),
+            Flexible(
+               child: Card(
+                elevation: 4,
+                child: Container(
+                  height: 100,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
