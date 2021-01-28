@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/tab_screen.dart';
+import '../../screens/tab_screen.dart';
 
 class AuthForm extends StatefulWidget {
   @override
