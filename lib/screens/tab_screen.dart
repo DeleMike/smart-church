@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
+import '../screens/actions_screen.dart';
 
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab';
@@ -22,7 +23,7 @@ class _TabScreenState extends State<TabScreen> {
         'title': 'Home',
       },
       {
-        'tab': Container(child:Center(child: Text('Pastor actions'),),) ,
+        'tab': ActionsScreen() ,
         'title': 'Actions',
       },
       {
@@ -48,7 +49,7 @@ class _TabScreenState extends State<TabScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
-        elevation: 7,
+        elevation: 0,
         items: [
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
