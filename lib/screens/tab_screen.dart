@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/home_screen.dart';
+
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab';
 
@@ -16,7 +18,7 @@ class _TabScreenState extends State<TabScreen> {
     super.initState();
     _tabs = [
       {
-        'tab': Container(child:Center(child: Text('Church activity displayed here, Real time?'),),) ,
+        'tab': HomeScreen(),
         'title': 'Home',
       },
       {
