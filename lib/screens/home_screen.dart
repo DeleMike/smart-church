@@ -7,38 +7,35 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-                  child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(
-                child: Card(
-                  elevation: 2,
-                  child: OfferingGraph(),
-                ),
+      body: SingleChildScrollView(
+                child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Card(
+                elevation: 2,
+                child: OfferingGraph(),
               ),
-              Flexible(
-                child: Card(
-                  elevation: 2,
-                  child: OfferingGraph(),
-                ),
+            ),
+            Flexible(
+              child: Card(
+                elevation: 2,
+                child: OfferingGraph(),
               ),
-              Flexible(
-                child: Card(
-                  elevation: 2,
-                  child: OfferingGraph(),
-                ),
+            ),
+            Flexible(
+              child: Card(
+                elevation: 2,
+                child: OfferingGraph(),
               ),
-              Flexible(
-                child: Card(
-                  elevation: 2,
-                  child: OfferingGraph(),
-                ),
+            ),
+            Flexible(
+              child: Card(
+                elevation: 2,
+                child: OfferingGraph(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

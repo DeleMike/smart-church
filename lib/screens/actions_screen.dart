@@ -20,69 +20,52 @@ class _ActionsScreenState extends State<ActionsScreen> {
     return DropdownMenuItem<String>(value: val, child: Text(val));
   }).toList();
 
+  Widget _buildActionWidget(String action, Function func) {
+    return InkWell(
+      onTap: func,
+      splashColor: Colors.black26,
+      highlightColor: Colors.indigo[100],
+      child: Container(
+        margin: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                action,
+                style: Theme.of(context).textTheme.headline1,
+              ),
+            ),
+            Icon(
+              Icons.arrow_right,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            margin: EdgeInsets.all(8.0),
-            padding: EdgeInsets.all(8.0),
-            child: Align(
-              child: Text(
-                'Actions',
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
-          ),
-          Divider(),
-          Container(
-            margin: EdgeInsets.all(16.0),
-            padding: EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white,
-            ),
-            child: Align(
-              child: DropdownButton(
-                underline: Container(),
-                value: _selectedFunction,
-                onChanged: (newVal) {
-                  setState(() {
-                    _selectedFunction = newVal;
-                  });
-                },
-                items: _functionsDropdownMenuItems,
-              ),
-            ),
-          ),
-
-          Container(
-            margin: EdgeInsets.all(16.0),
-            padding: EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white,
-            ),
-            child: FlatButton(
-              onPressed: () {},
-              child: Text('Manage Pastor', style: Theme.of(context).textTheme.headline1),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(16.0),
-            padding: EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.white,
-            ),
-            child: FlatButton(
-              onPressed: () {},
-              child: Text('Manage Branch', style: Theme.of(context).textTheme.headline1),
-            ),
-          ),
+          _buildActionWidget('Visit branch', () {
+            print('visit branch');
+          }),
+          _buildActionWidget('New offering title', () {}),
+          _buildActionWidget('New Expense', () {}),
+          _buildActionWidget('New Branch', () {}),
+          _buildActionWidget('New add new pastor', () {}),
+          _buildActionWidget('Manage Pastor', () {}),
+          _buildActionWidget('Manage Branch', () {}),
         ],
       ),
     );

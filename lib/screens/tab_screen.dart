@@ -49,7 +49,7 @@ class _TabScreenState extends State<TabScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
-        elevation: 0,
+        elevation: 7,
         items: [
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
