@@ -3,10 +3,11 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../models/offering_data.dart';
 
+///display for offering analysis
 class OfferingGraph extends StatelessWidget {
   final String title;
-  //OfferingGraph();
   OfferingGraph(this.title);
+
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
@@ -14,9 +15,8 @@ class OfferingGraph extends StatelessWidget {
       primaryXAxis: CategoryAxis(),
       // Chart title
       title: ChartTitle(text: title, textStyle: Theme.of(context).textTheme.headline5),
-      tooltipBehavior: TooltipBehavior(enable: true),
-      // Enable legend
-      //legend: Legend(isVisible: true),
+      //tooltipBehavior: TooltipBehavior(enable: true, header: 'Hello', format: '${dataList[0]}%'
+      // , canShowMarker: true,),
       series: <LineSeries<OfferingData, String>>[
         LineSeries<OfferingData, String>(
           // Bind data source
@@ -25,12 +25,12 @@ class OfferingGraph extends StatelessWidget {
             OfferingData('Feb', 28000),
             OfferingData('Mar', 34000.34),
             OfferingData('Apr', 32000),
-            OfferingData('May', 40000),
-            OfferingData('Jun', 40000)
+            OfferingData('May', 25000),
+            OfferingData('Jun', 40000),
           ],
           xValueMapper: (OfferingData offering, _) => offering.month,
           yValueMapper: (OfferingData offering, _) => offering.amount,
-          dataLabelSettings: DataLabelSettings(isVisible: true) 
+          dataLabelSettings: DataLabelSettings(isVisible: true), 
         )
       ],
     );

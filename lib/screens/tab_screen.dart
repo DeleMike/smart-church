@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/actions_screen.dart';
+import '../screens/settings_screen.dart';
 
+///displays all main screens for app
 class TabScreen extends StatefulWidget {
   static const routeName = '/tab';
 
@@ -27,7 +29,7 @@ class _TabScreenState extends State<TabScreen> {
         'title': 'Actions',
       },
       {
-        'tab': Container(child:Center(child: Text('Settings'),),) ,
+        'tab': SettingsScreen(),
         'title': 'Settings',
       },
     ];

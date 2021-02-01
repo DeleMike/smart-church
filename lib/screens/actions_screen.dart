@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///display a list of actions that can be performed by church admin
 class ActionsScreen extends StatelessWidget {
   Widget _buildActionWidget(BuildContext ctx, String action, Function func) {
     return InkWell(

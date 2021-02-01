@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/graphs/offering_graph.dart';
 
+///displays all current reports from different church branches
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
   @override
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           Expanded(
             child: SingleChildScrollView(
-                          child: Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Flexible(
@@ -40,10 +41,13 @@ class HomeScreen extends StatelessWidget {
           FlatButton(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text('View All Reports', style: Theme.of(context).textTheme.headline1.copyWith(
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w600,
-              ),),
+              child: Text(
+                'View All Reports',
+                style: Theme.of(context).textTheme.headline1.copyWith(
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+              ),
             ),
             onPressed: () {},
           ),
