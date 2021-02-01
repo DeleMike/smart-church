@@ -9,6 +9,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  bool _value = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,11 +28,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icons.bedtime_outlined,
                   color: Theme.of(context).primaryColor,
                 ),
-                switchValue: true,
+                switchValue: _value,
                 switchActiveColor: Theme.of(context).primaryColor,
                 onToggle: (bool val) {
-                  var x = val;
-                  print('Settings: Dark Mode = $val');
+                  setState(() => _value = !_value);
+                 // value = !val;
+                  print('Settings: Dark Mode = $_value');
                 },
               ),
             ],
