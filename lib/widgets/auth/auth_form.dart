@@ -294,10 +294,11 @@ class _AuthFormState extends State<AuthForm>
                       ),
                     ),
                   ),
-                  if (_isLoading) Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: CircularProgressIndicator(),
-                  ),
+                  if (_isLoading)
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: CircularProgressIndicator(),
+                    ),
                   if (!_isLoading)
                     RaisedButton(
                       child: Text(
@@ -323,6 +324,18 @@ class _AuthFormState extends State<AuthForm>
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       textColor: Theme.of(context).primaryColor,
                     ),
+                    _authMode == AuthMode.Login ? Divider() : Container(),
+                  _authMode == AuthMode.Login
+                      ? FlatButton(
+                          onPressed: () {},
+                          child: Text('Forgot password?', style: Theme.of(context).textTheme.bodyText2,),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 30.0, vertical: 4),
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          textColor: Theme.of(context).primaryColor,
+                        )
+                      : Container(),
                 ],
               ),
             ),
