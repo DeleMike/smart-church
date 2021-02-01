@@ -7,36 +7,47 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-                child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Flexible(
-              child: Card(
-                elevation: 2,
-                child: OfferingGraph(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+                          child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: Card(
+                      elevation: 2,
+                      child: OfferingGraph('Attendance reports'),
+                    ),
+                  ),
+                  Flexible(
+                    child: Card(
+                      elevation: 2,
+                      child: OfferingGraph('Income reports'),
+                    ),
+                  ),
+                  Flexible(
+                    child: Card(
+                      elevation: 2,
+                      child: OfferingGraph('Expense reports'),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Flexible(
-              child: Card(
-                elevation: 2,
-                child: OfferingGraph(),
-              ),
+          ),
+          FlatButton(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text('View All Reports', style: Theme.of(context).textTheme.headline1.copyWith(
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.w600,
+              ),),
             ),
-            Flexible(
-              child: Card(
-                elevation: 2,
-                child: OfferingGraph(),
-              ),
-            ),
-            Flexible(
-              child: Card(
-                elevation: 2,
-                child: OfferingGraph(),
-              ),
-            ),
-          ],
-        ),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
