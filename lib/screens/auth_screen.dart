@@ -46,8 +46,13 @@ class AuthScreen extends StatelessWidget {
                 ),
               ),
               Center(
-                child: Text('Smart Church',
-                    style: Theme.of(context).textTheme.headline2),
+                child: Text(
+                  'Smart Church',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline2
+                      .copyWith(color: Colors.white),
+                ),
               ),
             ],
           ),
