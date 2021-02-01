@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ActionsScreen extends StatefulWidget {
-  @override
-  _ActionsScreenState createState() => _ActionsScreenState();
-}
-
-class _ActionsScreenState extends State<ActionsScreen> {
-  static const _functions = [
-    'Create offering type',
-    'Create new expense',
-    'Create new branch',
-    'Add new pastor'
-  ];
-
-  String _selectedFunction = 'Create offering type';
-
-  final List<DropdownMenuItem<String>> _functionsDropdownMenuItems =
-      _functions.map((val) {
-    return DropdownMenuItem<String>(value: val, child: Text(val));
-  }).toList();
-
-  Widget _buildActionWidget(String action, Function func) {
+class ActionsScreen extends StatelessWidget {
+  Widget _buildActionWidget(BuildContext ctx, String action, Function func) {
     return InkWell(
       onTap: func,
       splashColor: Colors.black26,
@@ -39,7 +20,7 @@ class _ActionsScreenState extends State<ActionsScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 action,
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(ctx).textTheme.headline1,
               ),
             ),
             Icon(
@@ -57,15 +38,15 @@ class _ActionsScreenState extends State<ActionsScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _buildActionWidget('Visit branch', () {
+          _buildActionWidget(context, 'Visit branch', () {
             print('visit branch');
           }),
-          _buildActionWidget('New offering title', () {}),
-          _buildActionWidget('New Expense', () {}),
-          _buildActionWidget('New Branch', () {}),
-          _buildActionWidget('New add new pastor', () {}),
-          _buildActionWidget('Manage Pastor', () {}),
-          _buildActionWidget('Manage Branch', () {}),
+          _buildActionWidget(context, 'New offering title', () {}),
+          _buildActionWidget(context, 'New Expense', () {}),
+          _buildActionWidget(context, 'New Branch', () {}),
+          _buildActionWidget(context, 'New add new pastor', () {}),
+          _buildActionWidget(context, 'Manage Pastor', () {}),
+          _buildActionWidget(context, 'Manage Branch', () {}),
         ],
       ),
     );
