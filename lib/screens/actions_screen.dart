@@ -45,6 +45,7 @@ class ActionsScreen extends StatelessWidget {
           _buildActionWidget(context, 'New Expense', () {}),
           _buildActionWidget(context, 'New Branch', () {}),
           _buildActionWidget(context, 'New add new pastor', () {}),
+          Divider(),
           _buildActionWidget(context, 'Manage Pastor', () {}),
           _buildActionWidget(context, 'Manage Branch', () {}),
         ],
